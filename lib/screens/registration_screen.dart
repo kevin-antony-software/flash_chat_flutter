@@ -10,6 +10,7 @@ class RegistrationScreen extends StatefulWidget {
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
   final _auth = FirebaseAuth.instance;
+  bool showSpinner = false;
   late String email;
   late String password;
 
@@ -108,6 +109,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 child: MaterialButton(
                   onPressed: () async {
                     //Implement registration functionality.
+                    setState(() {
+                      showSpinner = true;
+                    });
                     print(email);
                     print(password);
                     try {
@@ -123,6 +127,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     } catch (e) {
                       print(e);
                     }
+                    setState(() {
+                      showSpinner = false;
+                    });
                   },
                   minWidth: 200.0,
                   height: 42.0,
