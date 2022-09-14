@@ -7,6 +7,7 @@ const kSendButtonTextStyle = TextStyle(
 );
 
 const kMessageTextFieldDecoration = InputDecoration(
+  fillColor: Colors.black,
   contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
   hintText: 'Type your message here...',
   border: InputBorder.none,
